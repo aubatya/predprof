@@ -1,3 +1,4 @@
+from app.service import *
 import telebot
 import time
 import datetime as dt
@@ -10,12 +11,7 @@ import sqlite3
 from PIL import Image, ImageDraw
 token = '5344136923:AAGF0VEGH66s5SJV2Q_eMBSuPkvJsX4Gx1E'
 bot = telebot.TeleBot(token)
-def build_way(k1,k2):
-    pass
-def build_anamaly_map():
-    pass
-def adding_new_values():
-    pass
+
 @bot.message_handler(commands=['start'])
 
 
@@ -76,7 +72,6 @@ def drow_way(message):
     else:
         x1,y1,x2,y2 = map(int,(message.text).split())
         m = build_way((x1,y1),(x2,y2))
-        m = [(1,1),(1,10),(4,10),(4,15),(10,15)]
         keyboard = telebot.types.ReplyKeyboardMarkup()
         keyboard.row('Главное меню')
         im = Image.open('map1.png')
