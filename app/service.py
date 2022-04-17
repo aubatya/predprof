@@ -257,7 +257,7 @@ def build_map(message):
 
     keyboard = telebot.types.ReplyKeyboardMarkup()
     keyboard.row('Главное меню')
-    im = Image.open('map.png', "rb")
+    im = Image.open('map.png')
     draw = ImageDraw.Draw(im)
     for i in range(len(m)):
         draw.ellipse([m[i][0]*50-8, m[i][1]*50-8, m[i][0]*50+8, m[i][1]*50+8], fill="red")
