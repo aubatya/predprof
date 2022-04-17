@@ -21,4 +21,22 @@ def get_data():
 
     return ans
 
-print(*get_data(), sep="\n")
+
+def get_center(h1, h2, h3):
+    x1, y1 = h1
+    x2, y2 = h2
+    x3, y3 = h3
+
+    a = x1 ** 2 - x2 ** 2
+    b = y2 ** 2 - y1 ** 2
+    e = y2 - y1
+    g = x1 - x2
+    c = x1 ** 2 - x3 ** 2
+    d = y3 ** 2 - y1 ** 2
+    f = y3 - y1
+    h = x1 - x3
+
+    y0 = (2 * g * (c - d) - 2 * h * (a - b)) / (4 * (h * e - g * f))
+    x0 = (a - b + 2 * y0 * e) / (2 * g)
+
+    return x0, y0
